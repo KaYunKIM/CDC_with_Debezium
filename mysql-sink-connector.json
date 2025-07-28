@@ -1,0 +1,19 @@
+{
+    "name": "mysql-sink-connector",
+    "config": {
+      "connector.class": "io.debezium.connector.jdbc.JdbcSinkConnector",
+      "connection.url": "jdbc:mysql://mysql_target:3306/targetdb",
+      "connection.username": "mysqltarget",
+      "connection.password": "mysqltarget",
+      "topics": "mysql_source.sourcedb.employee",
+      "table.name.format": "employee",
+      "insert.mode": "upsert",
+      "primary.key.mode": "record_key",
+      "primary.key.fields": "id",
+      "auto.create": "true",
+      "auto.evolve": "true",
+      "delete.enabled": "true",
+      "hibernate.dialect": "org.hibernate.dialect.MySQLDialect",
+      "jakarta.persistence.jdbc.url": "jdbc:mysql://mysql_target:3306/targetdb"
+    }
+}
